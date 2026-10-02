@@ -17,11 +17,9 @@
     }
   },
 
-  "updateContentCommand": "if [ -f packages.txt ]; then sudo apt-get update && sudo xargs apt-get install -y < packages.txt; fi; if [ -f requirements.txt ]; then pip install -r requirements.txt; fi; pip install streamlit",
+  "updateContentCommand": "if [ -f packages.txt ]; then sudo apt-get update && sudo xargs apt-get install -y < packages.txt; fi; if [ -f requirements.txt ]; then pip install -r requirements.txt; fi",
 
-  "postAttachCommand": {
-    "server": "streamlit run electricity_analyzer_enhanced.py --server.address=0.0.0.0 --server.port=8501 --server.enableCORS false --server.enableXsrfProtection false"
-  },
+  "postAttachCommand": "streamlit run electricity_analyzer_enhanced.py --server.address=0.0.0.0 --server.port=8501 --server.enableCORS false --server.enableXsrfProtection false",
 
   "forwardPorts": [
     8501
